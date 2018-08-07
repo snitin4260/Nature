@@ -1,10 +1,11 @@
 .btn {
-    &:link {
+    &:link ,
+    &:visited, 
+    & {
         @extend %btn-state;
+        border: none;
     }
-    &:visited {
-        @extend %btn-state;
-    }
+
     &:hover {
         transform: translateY(-0.3rem);
         box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
@@ -13,9 +14,14 @@
             opacity: 0;
         }
     }
-    &:active {
+
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(-0.2rem);
+        box-shadow: 0 0.5rem 1rem rgba($color-black,0.2);
     }
+
     &--white {
         background-color: $color-white;
         color: $color-gray-dark;
